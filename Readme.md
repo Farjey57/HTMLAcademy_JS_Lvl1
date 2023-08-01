@@ -1,10 +1,5 @@
 # Личный проект «Кекстаграм»
 
-* Студент: [Игорь Чесалин](https://up.htmlacademy.ru/javascript/22/user/222997).
-* Наставник: [Евгений Лепёшкин](https://htmlacademy.ru/profile/id144641).
-
----
-
 _Не удаляйте и не обращайте внимание на файлы и папки:_
 _`.editorconfig`, `.eslintrc`, `.gitattributes`, `.gitignore`, `package-lock.json`, `package.json`., `.github`_
 
