@@ -1,3 +1,5 @@
 import {createArrayPosts} from './pictures.js'
+import {renderPhotos} from './create-cart.js'
 
-constData = createArrayPosts()
+const Data = createArrayPosts()
+renderPhotos(Data)

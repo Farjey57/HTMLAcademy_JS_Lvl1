@@ -21,6 +21,10 @@ const DESCRTIPTION = [
   'Какое-то недоразумение ахаха',
 ];
 
+const COMMENTS_AMOUNT_LIMIT = 10;
+const LIKES_LIMIT_DOWN = 15;
+const LIKES_LIMIT_UP = 200;
+
 // Генерируем список индексов картинок
 const URLS_IMAGES_AMOUNT = 25
 const URLS_IMAGES = Array.from({length: URLS_IMAGES_AMOUNT}, (value, index) => index + 1)
@@ -46,7 +50,7 @@ const getRandomArrayElement = (arr) => {
 };
 
 /**
- * 
+ * Получение комментария
  * @param {Array} comments - Массив строк 
  * @returns {String} строка состоящая из 1 или 2 случайных неповторяющихся строк массива
  */
@@ -59,10 +63,6 @@ const createComment = ([...comments]) => {
     };
     return listString.join(' ')
 };
-
-const COMMENTS_AMOUNT_LIMIT = 10;
-const LIKES_LIMIT_DOWN = 15;
-const LIKES_LIMIT_UP = 200;
 
 const createPost = () => {
     return {
