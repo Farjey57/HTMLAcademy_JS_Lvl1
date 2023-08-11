@@ -15,5 +15,11 @@ const getRandomBetween = function (min=0, max=1, round=0) {
     return Math.round((Math.random() * (max-min) + min) * roundRatio)/roundRatio
 }
 
+function setAttributes(el, attrs) {
+    for(var key in attrs) {
+      el.setAttribute(key, attrs[key]);
+    }
+  }
 
-export {getRandomBetween}
+
+export {getRandomBetween, setAttributes}
