@@ -36,8 +36,8 @@ const URLS_IMAGES = Array.from({length: URLS_IMAGES_AMOUNT}, (value, index) => i
  */
 
 const getRandomArrayElementNoRepeat = (arr) => {
-    const randomIndex = getRandomBetween(0, arr.length - 1)
-    return arr.splice( randomIndex, 1)[0]
+  const randomIndex = getRandomBetween(0, arr.length - 1)
+  return arr.splice( randomIndex, 1)[0]
 }
 
 /**
@@ -46,7 +46,7 @@ const getRandomArrayElementNoRepeat = (arr) => {
  * @returns Случайный элемент массива
  */
 const getRandomArrayElement = (arr) => {
-    return arr[getRandomBetween(0, arr.length - 1)];
+  return arr[getRandomBetween(0, arr.length - 1)];
 };
 
 /**
@@ -56,21 +56,21 @@ const getRandomArrayElement = (arr) => {
  */
 
 const createComment = ([...comments]) => {
-    const amountNumber = getRandomBetween(1, 2);
-    let listString = [];
-    for (let i = 0; i < amountNumber; i++) {
-        listString.push(getRandomArrayElementNoRepeat(comments))
-    };
-    return listString.join(' ')
+  const amountNumber = getRandomBetween(1, 2);
+  let listString = [];
+  for (let i = 0; i < amountNumber; i++) {
+    listString.push(getRandomArrayElementNoRepeat(comments))
+  }
+  return listString.join(' ')
 };
 
 const createPost = () => {
-    return {
-        url: `photos/${getRandomArrayElementNoRepeat(URLS_IMAGES)}.jpg`,
-        likes: getRandomBetween(LIKES_LIMIT_DOWN, LIKES_LIMIT_UP),
-        comments: Array.from({ length: getRandomBetween(1, COMMENTS_AMOUNT_LIMIT)}, () => createComment(COMMENTS)),
-        description: getRandomArrayElement(DESCRTIPTION),
-    }
+  return {
+    url: `photos/${getRandomArrayElementNoRepeat(URLS_IMAGES)}.jpg`,
+    likes: getRandomBetween(LIKES_LIMIT_DOWN, LIKES_LIMIT_UP),
+    comments: Array.from({ length: getRandomBetween(1, COMMENTS_AMOUNT_LIMIT)}, () => createComment(COMMENTS)),
+    description: getRandomArrayElement(DESCRTIPTION),
+  }
 }
 
 const createArrayPosts = () => Array.from({ length: URLS_IMAGES_AMOUNT }, createPost);
