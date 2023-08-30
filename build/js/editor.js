@@ -1,4 +1,5 @@
 import {setDefaultOptions, effectRadioGroup, setFilter} from './effects.js'
+import './validation.js'
 
 const pageBody = document.querySelector('body')
 const uploadInput = document.querySelector('#upload-file')
@@ -14,7 +15,7 @@ const Scale = {
   MAX: 100,
   MIN: 25,
   STEP: 25,
-}
+};
 
 uploadInput.addEventListener ('change', () => {
   uploadPreview.src = URL.createObjectURL(uploadInput.files[0])
@@ -42,10 +43,9 @@ const closeModal = () => {
 
 const onModalCloseClick = () => {
   closeModal();
-}
+};
 
 const onModalKeydown = (evt) => {
-  evt.preventDefault();
   if (evt.code === ('Escape' || 'Esc')) closeModal();
 }
 
