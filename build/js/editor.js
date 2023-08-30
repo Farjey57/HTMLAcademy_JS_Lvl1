@@ -7,7 +7,6 @@ const uploadInput = document.querySelector('#upload-file')
 const uploadOverlay = document.querySelector('.img-upload__overlay')
 const uploadPreview = uploadOverlay.querySelector('.img-upload__preview > img')
 const uploadModalClose = uploadOverlay.querySelector('#upload-cancel')
-
 const buttonsScale = document.querySelectorAll('.scale__control')
 const scaleValue = document.querySelector('.scale__control--value')
 
@@ -46,7 +45,12 @@ const onModalCloseClick = () => {
 };
 
 const onModalKeydown = (evt) => {
-  if (evt.code === ('Escape' || 'Esc')) closeModal();
+  const calssActiveElement = document.activeElement.className
+  if (calssActiveElement === 'text__hashtags' || calssActiveElement === 'text__description') {
+    return
+  } else if (evt.code === 'Escape' || evt.code === 'Esc') {
+    closeModal();
+  }
 }
 
 [...buttonsScale].map( (btn) => {
