@@ -3,12 +3,14 @@ import './validation.js'
 
 const pageBody = document.querySelector('body')
 const uploadInput = document.querySelector('#upload-file')
+const uploadForm = document.querySelector('.img-upload__form')
 
 const uploadOverlay = document.querySelector('.img-upload__overlay')
 const uploadPreview = uploadOverlay.querySelector('.img-upload__preview > img')
 const uploadModalClose = uploadOverlay.querySelector('#upload-cancel')
 const buttonsScale = document.querySelectorAll('.scale__control')
 const scaleValue = document.querySelector('.scale__control--value')
+
 
 const Scale = {
   MAX: 100,
@@ -27,6 +29,7 @@ uploadInput.addEventListener ('change', () => {
     effectRadioGroup[i].addEventListener('change', setFilter);
   }
 })
+
 
 const closeModal = () => {
   uploadPreview.src = 'img/upload-default-image.jpg'
@@ -53,6 +56,7 @@ const onModalKeydown = (evt) => {
   }
 }
 
+
 [...buttonsScale].map( (btn) => {
   btn.addEventListener('click', (evt) => {
     let scale = parseInt(scaleValue.value, 10)
@@ -65,3 +69,13 @@ const onModalKeydown = (evt) => {
     uploadPreview.style.transform = `scale(${scale/100})`
   })
 })
+
+//Отправка фото
+
+// uploadForm.addEventListener('submit', (evt) => {
+//   evt.preventDefault()
+//   console.log(evt.target)
+//   const data = new FormData(evt.target)
+//   console.log(data)
+//   closeModal();
+// })

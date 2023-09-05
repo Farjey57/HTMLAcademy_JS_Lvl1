@@ -37,6 +37,12 @@ fieldHashtags.addEventListener('input', (evt) => {
 });
 
 fieldComment.addEventListener('input', (evt) => {
-  console.log(evt.target.validity) 
-  console.log(document.activeElement)
+  const valueComment = evt.target
+  valueComment.setCustomValidity('')
+
+  if (valueComment.value.length > 140) {
+    valueComment.setCustomValidity('Длина комментария не может составлять больше 140 символов')
+  }
+  
+  valueComment.reportValidity();
 });
