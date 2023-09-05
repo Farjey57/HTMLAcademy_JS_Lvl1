@@ -72,6 +72,17 @@ const NoUiSliderOptions = {
   },
   effect: 'brightness',
   unit: '',
+  format: {
+    // 'to' the formatted value. Receives a number.
+    to: function (value) {
+        return value;
+      },
+    // 'from' the formatted value.
+    // Receives a string, should return a number.
+    from: function (value) {
+        return value;
+      }
+    }
   },
 }
 
@@ -92,7 +103,8 @@ function setFilter(event) {
   } else {
     uploadPreview.className = `effects__preview--${value}`;
     fieldEffectLevel.classList.remove('hidden')
-    rangeNoUiSlider.noUiSlider.on('update', (_, handle, unencoded) => {
+    rangeNoUiSlider.noUiSlider.on('update', (valueу, handle, unencoded) => {
+      console.log(valueу[handle])
       effectLevelSlider.value = unencoded[handle];
       uploadPreview.style.filter = `${NoUiSliderOptions[value].effect}(${effectLevelSlider.value + NoUiSliderOptions[value].unit})`
     })
